@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <string.h>
+
+int i_p(char k[])
+{
+	int size;
+	int v = -1;
+	char h = 0;
+	size = strlen(k);
+	for (int i = 0; i < size / 2; i++)
+	{
+		h = k[i];
+
+		if (k[i] == k[size - i - 1])
+		{
+			v = 0;
+			break;
+		}
+		else
+		{
+			v = 1;
+		}
+	}
+	return v;
+}
+
+
+int w(int b)
+{
+	int n = 0;
+	n = b;
+	int y = 0;
+	while (n)
+	{
+		y = (y * 10) + (n % 10);
+		n = n / 10;
+	}
+	return y;
+}
+
+void add(int b, int count)
+{
+	for (count = 0 ; count < 1000; count++)
+	{
+		if (b == w(b))
+		{
+			printf("%d %d", count, b);
+			break;
+		}
+		else
+			b = b + w(b);
+	}
+}
+
+int main()
+{
+	int y = 0;
+	int b;
+	char rev[50] = {0,};
+	int count = 0;
+	int v = -1;
+	int n = 0; // 임의의 정수 (입력 값)
+	int r = 0; // 회문인지를 알아내기 위한 반복 횟수
+	int p; // 회문에 해당하는 수
+	printf("Please enter a number : ");
+	scanf_s("%d", &n);
+	b = n;
+
+	add(b, count);
+
+	return 0;
+}
+
